@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Request Logger",
+	"version": "1.0",
+	"description": "A browser request intercepter and logger.",
+	"icons": {},
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": [
+		"webRequest"
+	],
+
+	"host_permissions": [
+		"*://*/*"
+	],
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	}
+}
